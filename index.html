@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<title>Pokédex do Henrique</title>
+<meta name="theme-color" content="#c8102e">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Pokédex">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=Nunito:wght@600;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="device" id="device">
+
+  <!-- TOPO: lente azul e LEDs -->
+  <header class="top">
+    <div class="lens-ring"><div class="lens" id="lens"></div></div>
+    <div class="leds">
+      <span class="led red" id="ledR"></span>
+      <span class="led yellow" id="ledY"></span>
+      <span class="led green" id="ledG"></span>
+    </div>
+    <button class="mute" id="muteBtn" aria-label="Som">🔊</button>
+  </header>
+
+  <!-- TELA -->
+  <section class="bezel">
+    <div class="bezel-dots"><i></i><i></i></div>
+    <div class="screen" id="screen">
+
+      <!-- Tela de ligar -->
+      <div class="view boot" id="viewBoot">
+        <div class="boot-logo">POKéDEX</div>
+        <div class="boot-sub">do Henrique</div>
+        <button class="power" id="powerBtn">▶ LIGAR</button>
+        <div class="boot-hint">Toque para ligar</div>
+      </div>
+
+      <!-- Lista -->
+      <div class="view list hidden" id="viewList">
+        <div class="toolbar">
+          <input id="search" type="search" placeholder="Buscar nome ou número" autocomplete="off" enterkeyhint="search">
+        </div>
+        <div class="chips" id="genChips"></div>
+        <div class="chips types" id="typeChips"></div>
+        <div class="grid" id="grid"></div>
+        <div class="empty hidden" id="empty">Nenhum Pokémon encontrado</div>
+      </div>
+
+      <!-- Detalhe -->
+      <div class="view detail hidden" id="viewDetail"></div>
+
+      <!-- Quiz -->
+      <div class="view quiz hidden" id="viewQuiz"></div>
+
+      <div class="scanlines"></div>
+    </div>
+    <div class="bezel-bottom">
+      <span class="led-small" id="ledScreen"></span>
+      <div class="lcd" id="lcd">---</div>
+      <div class="grille"><i></i><i></i><i></i><i></i></div>
+    </div>
+  </section>
+
+  <!-- CONTROLES -->
+  <section class="controls">
+    <div class="dpad" id="dpad">
+      <button class="d up" data-dir="up" aria-label="Cima"></button>
+      <button class="d left" data-dir="left" aria-label="Esquerda"></button>
+      <span class="d center"></span>
+      <button class="d right" data-dir="right" aria-label="Direita"></button>
+      <button class="d down" data-dir="down" aria-label="Baixo"></button>
+    </div>
+
+    <div class="middle">
+      <div class="pills">
+        <button class="pill" id="btnList">LISTA</button>
+        <button class="pill" id="btnQuiz">QUEM É?</button>
+      </div>
+    </div>
+
+    <div class="ab">
+      <button class="round b" id="btnB" aria-label="Voltar">B</button>
+      <button class="round a" id="btnA" aria-label="Confirmar">A</button>
+    </div>
+  </section>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
